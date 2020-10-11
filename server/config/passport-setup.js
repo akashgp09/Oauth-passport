@@ -2,7 +2,6 @@ const passport = require("passport");
 const GoogleStrategy = require("passport-google-oauth20").Strategy;
 const keys = require("./keys");
 const User = require("../models/user-model");
-
 passport.use(
   new GoogleStrategy(
     {
@@ -14,9 +13,7 @@ passport.use(
 
     async (token, tokenSecret, profile, done) => {
       // find current user in UserModel
-      console.log(token);
-      console.log(tokenSecret);
-      console.log(profile);
+   
       const currentUser = await User.findOne({
         googleId: profile.id,
       });
