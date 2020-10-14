@@ -28,7 +28,7 @@ export default class HomePage extends Component {
           authenticated: true,
           user: responseJson.user,
         });
-        console.log(this.state);
+       
       })
       .catch((error) => {
         this.setState({
